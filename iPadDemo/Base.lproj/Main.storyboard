@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iPadDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,92 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="46" translatesAutoresizingMaskIntoConstraints="NO" id="xZO-A0-vs8">
+                                <rect key="frame" x="301" y="246" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="91"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="srw-T6-tZz">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="163"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVa-WJ-6Tu">
+                                        <rect key="frame" x="565" y="35" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="163" id="5WM-c6-aOv"/>
+                                    <constraint firstAttribute="trailing" secondItem="HVa-WJ-6Tu" secondAttribute="trailing" constant="35" id="VXP-ON-x1t"/>
+                                    <constraint firstItem="HVa-WJ-6Tu" firstAttribute="top" secondItem="srw-T6-tZz" secondAttribute="top" constant="35" id="gp1-4d-wVm"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="PmA-hN-XlL" appends="YES" id="8Kj-65-Sa0"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65x-Lq-Um7">
+                                <rect key="frame" x="265" y="448" width="71" height="30"/>
+                                <state key="normal" title="Non-Word"/>
+                                <connections>
+                                    <action selector="nonWordButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oSH-ma-rMm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXV-oL-Xn0">
+                                <rect key="frame" x="148" y="448" width="37" height="30"/>
+                                <state key="normal" title="Word"/>
+                                <connections>
+                                    <action selector="wordButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fZj-w6-9nO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwD-Bp-cw8">
+                                <rect key="frame" x="416" y="448" width="87" height="30"/>
+                                <state key="normal" title="Animal Word"/>
+                                <connections>
+                                    <action selector="animalWordButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NWp-Ds-0Po"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xZO-A0-vs8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3aT-SI-l1b"/>
+                            <constraint firstItem="65x-Lq-Um7" firstAttribute="top" secondItem="xZO-A0-vs8" secondAttribute="bottom" constant="93" id="3n9-31-EPe"/>
+                            <constraint firstItem="xZO-A0-vs8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9iv-6H-7TH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="srw-T6-tZz" secondAttribute="trailing" constant="-20" id="HD9-ZG-yD4"/>
+                            <constraint firstItem="xZO-A0-vs8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="P1Y-vR-v3g"/>
+                            <constraint firstItem="65x-Lq-Um7" firstAttribute="leading" secondItem="YXV-oL-Xn0" secondAttribute="trailing" constant="80" id="c0s-bf-cKm"/>
+                            <constraint firstItem="65x-Lq-Um7" firstAttribute="centerX" secondItem="xZO-A0-vs8" secondAttribute="centerX" id="dlj-ce-jSw"/>
+                            <constraint firstItem="65x-Lq-Um7" firstAttribute="baseline" secondItem="YXV-oL-Xn0" secondAttribute="baseline" id="dxV-7T-iLo"/>
+                            <constraint firstItem="srw-T6-tZz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="eV7-Yg-u75"/>
+                            <constraint firstItem="zwD-Bp-cw8" firstAttribute="leading" secondItem="65x-Lq-Um7" secondAttribute="trailing" constant="80" id="esp-bf-DAv"/>
+                            <constraint firstItem="zwD-Bp-cw8" firstAttribute="baseline" secondItem="65x-Lq-Um7" secondAttribute="baseline" id="k7f-6Y-Ohi"/>
+                            <constraint firstItem="srw-T6-tZz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="urp-41-nwS"/>
+                            <constraint firstItem="xZO-A0-vs8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vvd-wl-yPj"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="P1Y-vR-v3g"/>
+                                <exclude reference="vvd-wl-yPj"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="masterClock" destination="HVa-WJ-6Tu" id="zxe-mK-ZZu"/>
+                        <outlet property="targetWord" destination="xZO-A0-vs8" id="9F4-cs-gGn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="PmA-hN-XlL">
+                    <connections>
+                        <action selector="tappedHeader:" destination="BYZ-38-t0r" id="iw0-d1-m81"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="296" y="385"/>
         </scene>
     </scenes>
 </document>

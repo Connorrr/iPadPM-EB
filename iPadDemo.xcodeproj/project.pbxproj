@@ -14,6 +14,8 @@
 		BF05FBE51BEAFE9900DA089B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF05FBE31BEAFE9900DA089B /* LaunchScreen.storyboard */; };
 		BF05FBF01BEAFE9900DA089B /* iPadDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05FBEF1BEAFE9900DA089B /* iPadDemoTests.swift */; };
 		BF05FBFB1BEAFE9900DA089B /* iPadDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05FBFA1BEAFE9900DA089B /* iPadDemoUITests.swift */; };
+		BF34DA911BF5948C00333C66 /* LDTPractice.csv in Resources */ = {isa = PBXBuildFile; fileRef = BF34DA901BF5948C00333C66 /* LDTPractice.csv */; settings = {ASSET_TAGS = (); }; };
+		BF34DA931BF597B100333C66 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF34DA921BF597B100333C66 /* CSV.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		BF05FBF61BEAFE9900DA089B /* iPadDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPadDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF05FBFA1BEAFE9900DA089B /* iPadDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadDemoUITests.swift; sourceTree = "<group>"; };
 		BF05FBFC1BEAFE9900DA089B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF34DA901BF5948C00333C66 /* LDTPractice.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LDTPractice.csv; path = ../../../../../../../../LDTPractice.csv; sourceTree = "<group>"; };
+		BF34DA921BF597B100333C66 /* CSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +103,11 @@
 			children = (
 				BF05FBDA1BEAFE9900DA089B /* AppDelegate.swift */,
 				BF05FBDC1BEAFE9900DA089B /* ViewController.swift */,
+				BF34DA921BF597B100333C66 /* CSV.swift */,
 				BF05FBDE1BEAFE9900DA089B /* Main.storyboard */,
 				BF05FBE11BEAFE9900DA089B /* Assets.xcassets */,
 				BF05FBE31BEAFE9900DA089B /* LaunchScreen.storyboard */,
+				BF34DA901BF5948C00333C66 /* LDTPractice.csv */,
 				BF05FBE61BEAFE9900DA089B /* Info.plist */,
 			);
 			path = iPadDemo;
@@ -231,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF34DA911BF5948C00333C66 /* LDTPractice.csv in Resources */,
 				BF05FBE51BEAFE9900DA089B /* LaunchScreen.storyboard in Resources */,
 				BF05FBE21BEAFE9900DA089B /* Assets.xcassets in Resources */,
 				BF05FBE01BEAFE9900DA089B /* Main.storyboard in Resources */,
@@ -260,6 +267,7 @@
 			files = (
 				BF05FBDD1BEAFE9900DA089B /* ViewController.swift in Sources */,
 				BF05FBDB1BEAFE9900DA089B /* AppDelegate.swift in Sources */,
+				BF34DA931BF597B100333C66 /* CSV.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +494,7 @@
 				BF05FC011BEAFE9900DA089B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF05FC021BEAFE9900DA089B /* Build configuration list for PBXNativeTarget "iPadDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +503,7 @@
 				BF05FC041BEAFE9900DA089B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF05FC051BEAFE9900DA089B /* Build configuration list for PBXNativeTarget "iPadDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +512,7 @@
 				BF05FC071BEAFE9900DA089B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
