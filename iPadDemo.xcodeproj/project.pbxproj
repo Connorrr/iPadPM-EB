@@ -19,6 +19,7 @@
 		BF4E0E911BFC2642003A46DA /* .DS_Store in Resources */ = {isa = PBXBuildFile; fileRef = BF4E0E901BFC2642003A46DA /* .DS_Store */; settings = {ASSET_TAGS = (); }; };
 		BF4E0E931BFC2685003A46DA /* LDEBPM-Instructions.html in Resources */ = {isa = PBXBuildFile; fileRef = BF4E0E921BFC2685003A46DA /* LDEBPM-Instructions.html */; settings = {ASSET_TAGS = (); }; };
 		BF4E0EA81BFC3255003A46DA /* LDTPractice.csv in Resources */ = {isa = PBXBuildFile; fileRef = BF4E0EA71BFC3255003A46DA /* LDTPractice.csv */; settings = {ASSET_TAGS = (); }; };
+		BF4E0EAA1BFC3367003A46DA /* LDTMain.csv in Resources */ = {isa = PBXBuildFile; fileRef = BF4E0EA91BFC3367003A46DA /* LDTMain.csv */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		BF4E0E901BFC2642003A46DA /* .DS_Store */ = {isa = PBXFileReference; lastKnownFileType = file; path = .DS_Store; sourceTree = "<group>"; };
 		BF4E0E921BFC2685003A46DA /* LDEBPM-Instructions.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = "LDEBPM-Instructions.html"; path = "../../../../../../../../Dropbox/iOS/LDEBPM-Instructions.html"; sourceTree = "<group>"; };
 		BF4E0EA71BFC3255003A46DA /* LDTPractice.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LDTPractice.csv; sourceTree = "<group>"; };
+		BF4E0EA91BFC3367003A46DA /* LDTMain.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LDTMain.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				BF05FBE11BEAFE9900DA089B /* Assets.xcassets */,
 				BF05FBE31BEAFE9900DA089B /* LaunchScreen.storyboard */,
 				BF4E0E901BFC2642003A46DA /* .DS_Store */,
+				BF4E0EA91BFC3367003A46DA /* LDTMain.csv */,
 				BF4E0EA71BFC3255003A46DA /* LDTPractice.csv */,
 				BF4E0E921BFC2685003A46DA /* LDEBPM-Instructions.html */,
 				BF05FBE61BEAFE9900DA089B /* Info.plist */,
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF4E0E931BFC2685003A46DA /* LDEBPM-Instructions.html in Resources */,
+				BF4E0EAA1BFC3367003A46DA /* LDTMain.csv in Resources */,
 				BF4E0E911BFC2642003A46DA /* .DS_Store in Resources */,
 				BF05FBE51BEAFE9900DA089B /* LaunchScreen.storyboard in Resources */,
 				BF05FBE21BEAFE9900DA089B /* Assets.xcassets in Resources */,
