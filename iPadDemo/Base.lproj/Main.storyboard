@@ -1,10 +1,89 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wkZ-BB-HCZ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Instructions View Controller-->
+        <scene sceneID="x8d-JT-Jlg">
+            <objects>
+                <viewController id="wkZ-BB-HCZ" customClass="InstructionsViewController" customModule="iPadDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sly-Uy-fDw"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tnd-ey-iu7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7hW-5H-dDS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzL-LB-Zpk">
+                                <rect key="frame" x="0.0" y="206" width="600" height="188"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="wzL-LB-Zpk" firstAttribute="leading" secondItem="7hW-5H-dDS" secondAttribute="leading" id="5wZ-ZU-CwV"/>
+                            <constraint firstAttribute="trailing" secondItem="wzL-LB-Zpk" secondAttribute="trailing" id="8Xc-d4-gDm"/>
+                            <constraint firstItem="wzL-LB-Zpk" firstAttribute="leading" secondItem="7hW-5H-dDS" secondAttribute="leading" id="9or-WI-5YA"/>
+                            <constraint firstAttribute="trailing" secondItem="wzL-LB-Zpk" secondAttribute="trailing" id="I2L-gf-6S2"/>
+                            <constraint firstItem="wzL-LB-Zpk" firstAttribute="top" secondItem="Sly-Uy-fDw" secondAttribute="bottom" constant="186" id="L3b-zt-7cB">
+                                <variation key="heightClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="wzL-LB-Zpk" firstAttribute="centerY" secondItem="7hW-5H-dDS" secondAttribute="centerY" id="X24-pX-qtl">
+                                <variation key="heightClass=regular" constant="10"/>
+                            </constraint>
+                            <constraint firstItem="Tnd-ey-iu7" firstAttribute="top" secondItem="wzL-LB-Zpk" secondAttribute="bottom" constant="204" id="Yv6-jc-218">
+                                <variation key="heightClass=regular" constant="231"/>
+                            </constraint>
+                            <constraint firstItem="wzL-LB-Zpk" firstAttribute="top" secondItem="Sly-Uy-fDw" secondAttribute="bottom" constant="237" id="Zfc-da-AHZ">
+                                <variation key="heightClass=regular" constant="210"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8Xc-d4-gDm"/>
+                                <exclude reference="9or-WI-5YA"/>
+                                <exclude reference="Zfc-da-AHZ"/>
+                                <exclude reference="Yv6-jc-218"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="5wZ-ZU-CwV"/>
+                                <include reference="8Xc-d4-gDm"/>
+                                <include reference="9or-WI-5YA"/>
+                                <exclude reference="I2L-gf-6S2"/>
+                                <exclude reference="L3b-zt-7cB"/>
+                                <exclude reference="X24-pX-qtl"/>
+                                <include reference="Zfc-da-AHZ"/>
+                                <include reference="Yv6-jc-218"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="F0H-Si-mk4" appends="YES" id="bgG-FY-Xnl"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="mainTextField" destination="wzL-LB-Zpk" id="8Y2-eL-pN6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kI4-oE-e9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="F0H-Si-mk4">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" id="KXe-Vn-ffX"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-432" y="384.75"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>

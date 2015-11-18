@@ -73,11 +73,11 @@ class ViewController: UIViewController {
         print(reactionTime)
         
         self.trialNumber++   //incriment trial counter
-        dispatch_async(dispatch_get_main_queue()) {
+        dispatch_sync(dispatch_get_main_queue()) {
             self.targetWord.text = " ";
         }
         NSThread.sleepForTimeInterval(NSTimeInterval(0.5))
-        dispatch_async(dispatch_get_main_queue()) {
+        dispatch_sync(dispatch_get_main_queue()) {
             self.targetWord.text = self.stimArray[self.trialNumber][0]
             self.trialStartTime = NSDate.timeIntervalSinceReferenceDate()   // Set new trial start time
         }

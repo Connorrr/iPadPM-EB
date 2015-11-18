@@ -14,8 +14,11 @@
 		BF05FBE51BEAFE9900DA089B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF05FBE31BEAFE9900DA089B /* LaunchScreen.storyboard */; };
 		BF05FBF01BEAFE9900DA089B /* iPadDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05FBEF1BEAFE9900DA089B /* iPadDemoTests.swift */; };
 		BF05FBFB1BEAFE9900DA089B /* iPadDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05FBFA1BEAFE9900DA089B /* iPadDemoUITests.swift */; };
-		BF34DA911BF5948C00333C66 /* LDTPractice.csv in Resources */ = {isa = PBXBuildFile; fileRef = BF34DA901BF5948C00333C66 /* LDTPractice.csv */; settings = {ASSET_TAGS = (); }; };
 		BF34DA931BF597B100333C66 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF34DA921BF597B100333C66 /* CSV.swift */; settings = {ASSET_TAGS = (); }; };
+		BF4E0E8D1BFC033D003A46DA /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4E0E8C1BFC033D003A46DA /* InstructionsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		BF4E0E911BFC2642003A46DA /* .DS_Store in Resources */ = {isa = PBXBuildFile; fileRef = BF4E0E901BFC2642003A46DA /* .DS_Store */; settings = {ASSET_TAGS = (); }; };
+		BF4E0E931BFC2685003A46DA /* LDEBPM-Instructions.html in Resources */ = {isa = PBXBuildFile; fileRef = BF4E0E921BFC2685003A46DA /* LDEBPM-Instructions.html */; settings = {ASSET_TAGS = (); }; };
+		BF4E0EA81BFC3255003A46DA /* LDTPractice.csv in Resources */ = {isa = PBXBuildFile; fileRef = BF4E0EA71BFC3255003A46DA /* LDTPractice.csv */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +52,11 @@
 		BF05FBF61BEAFE9900DA089B /* iPadDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPadDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF05FBFA1BEAFE9900DA089B /* iPadDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadDemoUITests.swift; sourceTree = "<group>"; };
 		BF05FBFC1BEAFE9900DA089B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF34DA901BF5948C00333C66 /* LDTPractice.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LDTPractice.csv; path = ../../../../../../../../LDTPractice.csv; sourceTree = "<group>"; };
 		BF34DA921BF597B100333C66 /* CSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
+		BF4E0E8C1BFC033D003A46DA /* InstructionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
+		BF4E0E901BFC2642003A46DA /* .DS_Store */ = {isa = PBXFileReference; lastKnownFileType = file; path = .DS_Store; sourceTree = "<group>"; };
+		BF4E0E921BFC2685003A46DA /* LDEBPM-Instructions.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = "LDEBPM-Instructions.html"; path = "../../../../../../../../Dropbox/iOS/LDEBPM-Instructions.html"; sourceTree = "<group>"; };
+		BF4E0EA71BFC3255003A46DA /* LDTPractice.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LDTPractice.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,12 +108,15 @@
 			isa = PBXGroup;
 			children = (
 				BF05FBDA1BEAFE9900DA089B /* AppDelegate.swift */,
+				BF4E0E8C1BFC033D003A46DA /* InstructionsViewController.swift */,
 				BF05FBDC1BEAFE9900DA089B /* ViewController.swift */,
 				BF34DA921BF597B100333C66 /* CSV.swift */,
 				BF05FBDE1BEAFE9900DA089B /* Main.storyboard */,
 				BF05FBE11BEAFE9900DA089B /* Assets.xcassets */,
 				BF05FBE31BEAFE9900DA089B /* LaunchScreen.storyboard */,
-				BF34DA901BF5948C00333C66 /* LDTPractice.csv */,
+				BF4E0E901BFC2642003A46DA /* .DS_Store */,
+				BF4E0EA71BFC3255003A46DA /* LDTPractice.csv */,
+				BF4E0E921BFC2685003A46DA /* LDEBPM-Instructions.html */,
 				BF05FBE61BEAFE9900DA089B /* Info.plist */,
 			);
 			path = iPadDemo;
@@ -237,9 +246,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF34DA911BF5948C00333C66 /* LDTPractice.csv in Resources */,
+				BF4E0E931BFC2685003A46DA /* LDEBPM-Instructions.html in Resources */,
+				BF4E0E911BFC2642003A46DA /* .DS_Store in Resources */,
 				BF05FBE51BEAFE9900DA089B /* LaunchScreen.storyboard in Resources */,
 				BF05FBE21BEAFE9900DA089B /* Assets.xcassets in Resources */,
+				BF4E0EA81BFC3255003A46DA /* LDTPractice.csv in Resources */,
 				BF05FBE01BEAFE9900DA089B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +278,7 @@
 			files = (
 				BF05FBDD1BEAFE9900DA089B /* ViewController.swift in Sources */,
 				BF05FBDB1BEAFE9900DA089B /* AppDelegate.swift in Sources */,
+				BF4E0E8D1BFC033D003A46DA /* InstructionsViewController.swift in Sources */,
 				BF34DA931BF597B100333C66 /* CSV.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
