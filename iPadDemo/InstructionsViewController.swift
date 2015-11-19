@@ -14,7 +14,7 @@ class InstructionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("Hey dudes geta load of this view")
         let url = NSBundle.mainBundle().URLForResource("LDEBPM-Instructions", withExtension: "html")!
         let opts = [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType]
         var d : NSDictionary? = nil
@@ -22,6 +22,10 @@ class InstructionsViewController: UIViewController {
         self.mainTextField.attributedText = s
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("....  I just segue'd my pants.")
     }
 
     override func didReceiveMemoryWarning() {

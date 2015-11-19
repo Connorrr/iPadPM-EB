@@ -76,16 +76,21 @@ class ViewController: UIViewController {
         dispatch_sync(dispatch_get_main_queue()) {
             self.targetWord.text = " ";
         }
-        NSThread.sleepForTimeInterval(NSTimeInterval(0.5))
-        dispatch_sync(dispatch_get_main_queue()) {
-            self.targetWord.text = self.stimArray[self.trialNumber][0]
-            self.trialStartTime = NSDate.timeIntervalSinceReferenceDate()   // Set new trial start time
+    
+        if self.trialNumber < 3 {//self.stimArray.count {
+            NSThread.sleepForTimeInterval(NSTimeInterval(0.5))
+            dispatch_sync(dispatch_get_main_queue()) {
+                self.targetWord.text = self.stimArray[self.trialNumber][0]
+                self.trialStartTime = NSDate.timeIntervalSinceReferenceDate()   // Set new trial start time
+            }
+        }else{
+            print("not true")
+            dispatch_sync(dispatch_get_main_queue()) {
+                self.dismissViewControllerAnimated(true, completion: nil);
+            }
         }
         
         //TODO: This will need to be stored into an array for the log file
-        //sleep(0.5)  // Wait 500 milliseconds before starting a new trial
-        
-        //updateTargetWord(stimArray[trialNumber][0], withDelay: false)       // Display the new stim
     }
 
     override func didReceiveMemoryWarning() {
