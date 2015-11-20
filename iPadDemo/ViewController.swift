@@ -42,15 +42,20 @@ class ViewController: UIViewController {
             self.stimEnd()
         }
     }
-    // MARK:  Class Level Variables
+    // MARK:  Instance Variables
     
     var timerCount : Int = 0
     let startTime = NSDate.timeIntervalSinceReferenceDate()
     var masterTimer : NSTimer!
     var trialTimer : NSTimer!
-    var stimArray : [[String]] = []    // Stimulus Array. Types: 1 - Word, 2 - Non-word, 3 - PM
+    var stimArray : [[String]] = []         // Stimulus Array. Types: 1 - Word, 2 - Non-word, 3 - PM
+    var responseArray : [Response] = []
     var trialStartTime : NSTimeInterval!
     var trialNumber : Int = 0
+    var trialType : String = "Practice"     // Practice or Main
+    
+    //  MARK:  Objects
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,10 +72,18 @@ class ViewController: UIViewController {
         
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     func stimEnd() {
         let trialEndTime = NSDate.timeIntervalSinceReferenceDate()
         let reactionTime = trialEndTime - trialStartTime
-        print(reactionTime)
+        
+        let response = Response(trialType: self.trialType, stim: self.stimArray[self.trialNumber][0], response: "na", rt: reactionTime, corr: 1)
+        
+        self.responseArray.append(response)
         
         self.trialNumber++   //incriment trial counter
         dispatch_sync(dispatch_get_main_queue()) {
@@ -85,6 +98,7 @@ class ViewController: UIViewController {
             }
         }else{
             print("not true")
+            structArrayToCSV(self.responseArray)
             dispatch_sync(dispatch_get_main_queue()) {
                 self.dismissViewControllerAnimated(true, completion: nil);
             }
@@ -92,10 +106,16 @@ class ViewController: UIViewController {
         
         //TODO: This will need to be stored into an array for the log file
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func structArrayToCSV(responses: [Response]) -> String{
+        var returnCSVString : String = ""
+        
+        for response in responses {
+            returnCSVString += response.trialType + "," + response.stim + "," + response.response + "," + String(response.rt) + "," + String(response.corr) + "\n"
+        }
+        
+        print(returnCSVString)
+        return returnCSVString
     }
 
     func updateTime() {

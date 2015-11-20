@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzL-LB-Zpk">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzL-LB-Zpk">
                                 <rect key="frame" x="0.0" y="206" width="600" height="188"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
@@ -34,7 +34,7 @@
                             <constraint firstAttribute="trailing" secondItem="wzL-LB-Zpk" secondAttribute="trailing" id="8Xc-d4-gDm"/>
                             <constraint firstItem="wzL-LB-Zpk" firstAttribute="leading" secondItem="7hW-5H-dDS" secondAttribute="leading" id="9or-WI-5YA"/>
                             <constraint firstAttribute="trailing" secondItem="wzL-LB-Zpk" secondAttribute="trailing" id="I2L-gf-6S2"/>
-                            <constraint firstItem="wzL-LB-Zpk" firstAttribute="top" secondItem="Sly-Uy-fDw" secondAttribute="bottom" constant="186" id="L3b-zt-7cB">
+                            <constraint firstItem="wzL-LB-Zpk" firstAttribute="top" secondItem="Sly-Uy-fDw" secondAttribute="bottom" constant="142" id="L3b-zt-7cB">
                                 <variation key="heightClass=regular" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="wzL-LB-Zpk" firstAttribute="centerY" secondItem="7hW-5H-dDS" secondAttribute="centerY" id="X24-pX-qtl">
@@ -97,8 +97,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="46" translatesAutoresizingMaskIntoConstraints="NO" id="xZO-A0-vs8">
-                                <rect key="frame" x="301" y="246" width="0.0" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="46" translatesAutoresizingMaskIntoConstraints="NO" id="xZO-A0-vs8">
+                                <rect key="frame" x="300" y="300" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="91"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -124,21 +124,21 @@
                                     <outletCollection property="gestureRecognizers" destination="PmA-hN-XlL" appends="YES" id="8Kj-65-Sa0"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65x-Lq-Um7">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65x-Lq-Um7">
                                 <rect key="frame" x="265" y="448" width="71" height="30"/>
                                 <state key="normal" title="Non-Word"/>
                                 <connections>
                                     <action selector="nonWordButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oSH-ma-rMm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXV-oL-Xn0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXV-oL-Xn0">
                                 <rect key="frame" x="148" y="448" width="37" height="30"/>
                                 <state key="normal" title="Word"/>
                                 <connections>
                                     <action selector="wordButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fZj-w6-9nO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwD-Bp-cw8">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwD-Bp-cw8">
                                 <rect key="frame" x="416" y="448" width="87" height="30"/>
                                 <state key="normal" title="Animal Word"/>
                                 <connections>
@@ -149,23 +149,25 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xZO-A0-vs8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3aT-SI-l1b"/>
-                            <constraint firstItem="65x-Lq-Um7" firstAttribute="top" secondItem="xZO-A0-vs8" secondAttribute="bottom" constant="93" id="3n9-31-EPe"/>
                             <constraint firstItem="xZO-A0-vs8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9iv-6H-7TH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="srw-T6-tZz" secondAttribute="trailing" constant="-20" id="HD9-ZG-yD4"/>
+                            <constraint firstItem="zwD-Bp-cw8" firstAttribute="leading" secondItem="65x-Lq-Um7" secondAttribute="trailing" constant="80" id="KOM-T9-6lV"/>
                             <constraint firstItem="xZO-A0-vs8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="P1Y-vR-v3g"/>
-                            <constraint firstItem="65x-Lq-Um7" firstAttribute="leading" secondItem="YXV-oL-Xn0" secondAttribute="trailing" constant="80" id="c0s-bf-cKm"/>
-                            <constraint firstItem="65x-Lq-Um7" firstAttribute="centerX" secondItem="xZO-A0-vs8" secondAttribute="centerX" id="dlj-ce-jSw"/>
-                            <constraint firstItem="65x-Lq-Um7" firstAttribute="baseline" secondItem="YXV-oL-Xn0" secondAttribute="baseline" id="dxV-7T-iLo"/>
+                            <constraint firstItem="65x-Lq-Um7" firstAttribute="baseline" secondItem="zwD-Bp-cw8" secondAttribute="baseline" id="Qf1-OE-Oy5"/>
+                            <constraint firstItem="65x-Lq-Um7" firstAttribute="baseline" secondItem="YXV-oL-Xn0" secondAttribute="baseline" id="S4g-MT-h3s"/>
                             <constraint firstItem="srw-T6-tZz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="eV7-Yg-u75"/>
-                            <constraint firstItem="zwD-Bp-cw8" firstAttribute="leading" secondItem="65x-Lq-Um7" secondAttribute="trailing" constant="80" id="esp-bf-DAv"/>
-                            <constraint firstItem="zwD-Bp-cw8" firstAttribute="baseline" secondItem="65x-Lq-Um7" secondAttribute="baseline" id="k7f-6Y-Ohi"/>
+                            <constraint firstItem="65x-Lq-Um7" firstAttribute="centerX" secondItem="xZO-A0-vs8" secondAttribute="centerX" id="mee-xm-Lou"/>
+                            <constraint firstItem="65x-Lq-Um7" firstAttribute="leading" secondItem="YXV-oL-Xn0" secondAttribute="trailing" constant="80" id="p7l-If-SOn"/>
                             <constraint firstItem="srw-T6-tZz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="urp-41-nwS"/>
                             <constraint firstItem="xZO-A0-vs8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vvd-wl-yPj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="65x-Lq-Um7" secondAttribute="bottom" constant="122" id="xDQ-fW-dN1"/>
+                            <constraint firstItem="65x-Lq-Um7" firstAttribute="centerX" secondItem="srw-T6-tZz" secondAttribute="centerX" id="yqu-VG-6Y2"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="P1Y-vR-v3g"/>
                                 <exclude reference="vvd-wl-yPj"/>
+                                <exclude reference="mee-xm-Lou"/>
                             </mask>
                         </variation>
                     </view>

@@ -22,6 +22,7 @@
 		BF4E0EAA1BFC3367003A46DA /* LDTMain.csv in Resources */ = {isa = PBXBuildFile; fileRef = BF4E0EA91BFC3367003A46DA /* LDTMain.csv */; settings = {ASSET_TAGS = (); }; };
 		BF4E0EAD1BFD9777003A46DA /* LDEBPM-Goodbye.html in Resources */ = {isa = PBXBuildFile; fileRef = BF4E0EAB1BFD9777003A46DA /* LDEBPM-Goodbye.html */; settings = {ASSET_TAGS = (); }; };
 		BF4E0EAE1BFD9777003A46DA /* LDEBPM-Main.html in Resources */ = {isa = PBXBuildFile; fileRef = BF4E0EAC1BFD9777003A46DA /* LDEBPM-Main.html */; settings = {ASSET_TAGS = (); }; };
+		BF4E0EB01BFECA80003A46DA /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4E0EAF1BFECA80003A46DA /* Response.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		BF4E0EA91BFC3367003A46DA /* LDTMain.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LDTMain.csv; sourceTree = "<group>"; };
 		BF4E0EAB1BFD9777003A46DA /* LDEBPM-Goodbye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "LDEBPM-Goodbye.html"; sourceTree = "<group>"; };
 		BF4E0EAC1BFD9777003A46DA /* LDEBPM-Main.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "LDEBPM-Main.html"; sourceTree = "<group>"; };
+		BF4E0EAF1BFECA80003A46DA /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				BF4E0E8C1BFC033D003A46DA /* InstructionsViewController.swift */,
 				BF05FBDC1BEAFE9900DA089B /* ViewController.swift */,
 				BF34DA921BF597B100333C66 /* CSV.swift */,
+				BF4E0EAF1BFECA80003A46DA /* Response.swift */,
 				BF05FBDE1BEAFE9900DA089B /* Main.storyboard */,
 				BF05FBE11BEAFE9900DA089B /* Assets.xcassets */,
 				BF05FBE31BEAFE9900DA089B /* LaunchScreen.storyboard */,
@@ -292,6 +295,7 @@
 				BF05FBDB1BEAFE9900DA089B /* AppDelegate.swift in Sources */,
 				BF4E0E8D1BFC033D003A46DA /* InstructionsViewController.swift in Sources */,
 				BF34DA931BF597B100333C66 /* CSV.swift in Sources */,
+				BF4E0EB01BFECA80003A46DA /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
