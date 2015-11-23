@@ -9,5 +9,5 @@
 import Foundation
 
 public struct StaticVariables {
-    static var mainViewCount = 0    //  counts the amout of times the main view is accessed
+    static var isPractice : Bool = true    //  counts the amout of times the main view is accessed
 }

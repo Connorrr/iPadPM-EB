@@ -84,13 +84,14 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        StaticVariables.mainViewCount++
-        viewCount++
-        print("THIS IS THE VIEWCOUNT \(StaticVariables.mainViewCount)")
-        if (viewCount == 1){
-            isPractice = true
-        }else{
-            isPractice = false
+        if (!StaticVariables.isPractice){
+            trialType = "Main"
+        }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        if (StaticVariables.isPractice){
+            StaticVariables.isPractice = false
         }
     }
     
