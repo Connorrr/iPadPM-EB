@@ -28,16 +28,19 @@ class ViewController: UIViewController {
     
     @IBAction func wordButton(sender: UIButton) {
         trialTimer?.invalidate()
+        userResponse = "L"
         threadStimEnd()
     }
     
     @IBAction func nonWordButton(sender: UIButton) {
         trialTimer?.invalidate()
+        userResponse = "M"
         threadStimEnd()
     }
     
     @IBAction func animalWordButton(sender: UIButton) {
         trialTimer?.invalidate()
+        userResponse = "R"
         threadStimEnd()
     }
     // MARK:  Instance Variables
@@ -48,6 +51,7 @@ class ViewController: UIViewController {
     var trialTimer : NSTimer!
     var stimArray : [[String]] = []         // Stimulus Array. Types: 1 - Word, 2 - Non-word, 3 - PM
     var responseArray : [Response] = []
+    var userResponse : String = "na"
     var trialStartTime : NSTimeInterval!
     var trialNumber : Int = 0
     var trialType : String = "Practice"     // Practice or Main
@@ -79,6 +83,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        print("Practice? \(isPractice)")
         if (isPractice){
             isPractice = false
         }else{
@@ -97,20 +102,31 @@ class ViewController: UIViewController {
     }
     
     func stimEnd() {
-        print("stimEnd:  Called")
+        //TODO:  MAKE SURE THAT YOU THREAD LOCK THIS FUNCTION!!!!!
         let trialEndTime = NSDate.timeIntervalSinceReferenceDate()
-        let reactionTime = trialEndTime - trialStartTime
+        var reactionTime = 0.0
+        var corr = 0
+        if (self.userResponse != "na"){     //Check if the user responded
+            reactionTime = trialEndTime - self.trialStartTime               // Get reaction time
+            if (self.stimArray[self.trialNumber][1] == self.userResponse){  //
+                corr = 1
+            }
+        }
         
-        let response = Response(trialType: self.trialType, stim: self.stimArray[self.trialNumber][0], response: "na", rt: reactionTime, corr: 1)
+        // Check if response is correct or not
+        
+        let response = Response(trialType: self.trialType, stim: self.stimArray[self.trialNumber][0], response: self.userResponse, rt: reactionTime, corr: corr)
+        
+        self.userResponse = "na"        //  Reset response for trial timeout
         
         self.responseArray.append(response)
         
-        self.trialNumber++   //incriment trial counter
+        self.trialNumber++              //incriment trial counter
         dispatch_sync(dispatch_get_main_queue()) {
             self.targetWord.text = " ";
         }
     
-        if self.trialNumber < 3 {//self.stimArray.count {
+        if self.trialNumber < 3 {       //self.stimArray.count {
             NSThread.sleepForTimeInterval(NSTimeInterval(0.5))
             dispatch_sync(dispatch_get_main_queue()) {
                 self.targetWord.text = self.stimArray[self.trialNumber][0]
@@ -118,7 +134,7 @@ class ViewController: UIViewController {
                 self.trialStartTime = NSDate.timeIntervalSinceReferenceDate()   // Set new trial start time
             }
         }else{
-            print("not true")
+            //print("not true")
             structArrayToCSV(self.responseArray)
             dispatch_sync(dispatch_get_main_queue()) {
                 self.dismissViewControllerAnimated(true, completion: nil);
@@ -135,7 +151,7 @@ class ViewController: UIViewController {
             returnCSVString += response.trialType + "," + response.stim + "," + response.response + "," + String(response.rt) + "," + String(response.corr) + "\n"
         }
         
-        print(returnCSVString)
+        saveCSV(returnCSVString)
         return returnCSVString
     }
 
@@ -188,8 +204,31 @@ class ViewController: UIViewController {
             // Rows
             stimArray = csv.aRows
         }
+    }
+    
+    func saveCSV(log: String) {
+        let file = "log.csv" //this is the file. we will write to and read from it
         
+        let text = log //just a text
         
+        if let dir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
+            let path = dir.stringByAppendingPathComponent(file);
+            
+            //writing
+            do {
+                try text.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding)
+            }
+            catch {
+                print("Um OK...  I don't want you to over react but...  someshitgotfuckedupwhiletryingtosavethatfile....K..bye...")
+            }
+            
+            //reading
+            //do {
+            //    let text2 = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding)
+            //    print(text2)
+            //}
+            //catch {/* error handling here */}
+        }
     }
 
 }
