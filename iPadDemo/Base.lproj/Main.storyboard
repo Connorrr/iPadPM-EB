@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Cyx-Zz-Zd8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Cyx-Zz-Zd8">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -104,21 +104,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="srw-T6-tZz">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="163"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="108"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVa-WJ-6Tu">
-                                        <rect key="frame" x="565" y="35" width="0.0" height="0.0"/>
+                                        <rect key="frame" x="547" y="79" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="163" id="5WM-c6-aOv"/>
-                                    <constraint firstAttribute="trailing" secondItem="HVa-WJ-6Tu" secondAttribute="trailing" constant="35" id="VXP-ON-x1t"/>
-                                    <constraint firstItem="HVa-WJ-6Tu" firstAttribute="top" secondItem="srw-T6-tZz" secondAttribute="top" constant="35" id="gp1-4d-wVm"/>
+                                    <constraint firstAttribute="height" constant="108" id="5WM-c6-aOv"/>
+                                    <constraint firstAttribute="trailing" secondItem="HVa-WJ-6Tu" secondAttribute="trailing" constant="53" id="VXP-ON-x1t"/>
+                                    <constraint firstItem="HVa-WJ-6Tu" firstAttribute="top" secondItem="srw-T6-tZz" secondAttribute="top" constant="79" id="gp1-4d-wVm"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="PmA-hN-XlL" appends="YES" id="8Kj-65-Sa0"/>

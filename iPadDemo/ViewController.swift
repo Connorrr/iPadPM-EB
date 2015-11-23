@@ -19,28 +19,26 @@ class ViewController: UIViewController {
     // MARK:  Actions
     
     @IBAction func tappedHeader(sender: AnyObject) {
-        //print("Registered a little Tapperoonie!")
-        
-        masterTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateTime", userInfo: nil, repeats: true)
-        
+        print("Registered a little Tapperoonie!")
+        if (timerOpen) {
+            timerOpen = false
+            masterTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateTime", userInfo: nil, repeats: true)
+        }
     }
     
     @IBAction func wordButton(sender: UIButton) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)){
-            self.stimEnd()
-        }
+        trialTimer?.invalidate()
+        threadStimEnd()
     }
     
     @IBAction func nonWordButton(sender: UIButton) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)){
-            self.stimEnd()
-        }
+        trialTimer?.invalidate()
+        threadStimEnd()
     }
     
     @IBAction func animalWordButton(sender: UIButton) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)){
-            self.stimEnd()
-        }
+        trialTimer?.invalidate()
+        threadStimEnd()
     }
     // MARK:  Instance Variables
     
@@ -53,6 +51,8 @@ class ViewController: UIViewController {
     var trialStartTime : NSTimeInterval!
     var trialNumber : Int = 0
     var trialType : String = "Practice"     // Practice or Main
+    var timerOpen : Bool = true
+    var isPractice : Bool = true
     
     //  MARK:  Objects
     
@@ -64,11 +64,12 @@ class ViewController: UIViewController {
         importCSV()
         
         targetWord.text = stimArray[0][0]
+        setTrialTimer()
         
         //updateTargetWord(stimArray[1].stim, withDelay: false)               // Set initial Stim
         trialStartTime = NSDate.timeIntervalSinceReferenceDate()    // Set first trial start time
-            //trialTimer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "stimEnd", userInfo: nil, repeats: false)   //  After 3 seconds make sure the stim is removed
-            // TODO:  Make sure that this is invalidated with a button press
+        
+        // TODO:  Make sure that this is invalidated with a button press
         
     }
     
@@ -77,7 +78,26 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        if (isPractice){
+            isPractice = false
+        }else{
+            trialType = "Main"
+        }
+    }
+    
+    func setTrialTimer() {
+            self.trialTimer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "threadStimEnd", userInfo: nil, repeats: false)   //  After 3 seconds make sure the stim is removed
+    }
+    
+    func threadStimEnd() {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)){
+            self.stimEnd()
+        }
+    }
+    
     func stimEnd() {
+        print("stimEnd:  Called")
         let trialEndTime = NSDate.timeIntervalSinceReferenceDate()
         let reactionTime = trialEndTime - trialStartTime
         
@@ -94,6 +114,7 @@ class ViewController: UIViewController {
             NSThread.sleepForTimeInterval(NSTimeInterval(0.5))
             dispatch_sync(dispatch_get_main_queue()) {
                 self.targetWord.text = self.stimArray[self.trialNumber][0]
+                self.setTrialTimer()
                 self.trialStartTime = NSDate.timeIntervalSinceReferenceDate()   // Set new trial start time
             }
         }else{
@@ -119,6 +140,8 @@ class ViewController: UIViewController {
     }
 
     func updateTime() {
+        
+        //print("whats the time mister wolf hahah.... ok ill get back to work")
         
         timerCount++    // Update timer count to stop at 8
         
@@ -146,11 +169,13 @@ class ViewController: UIViewController {
         //concatenate minuets, seconds and milliseconds as assign it to the UILabel
     
         masterClock.text = "\(strMinutes):\(strSeconds)"
+        //print("\(strMinutes):\(strSeconds)")
         
         if timerCount > 7 {
             timerCount = 0
             masterClock.text = ""
             masterTimer.invalidate()
+            timerOpen = true
         }
         
     }
