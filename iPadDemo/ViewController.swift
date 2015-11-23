@@ -25,7 +25,7 @@ class ViewController: UIViewController {
             masterTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateTime", userInfo: nil, repeats: true)
         }
     }
-    
+    // TODO:  Make sure that button mashing doesn't fuck shit up
     @IBAction func wordButton(sender: UIButton) {
         trialTimer?.invalidate()
         userResponse = "L"
@@ -57,6 +57,7 @@ class ViewController: UIViewController {
     var trialType : String = "Practice"     // Practice or Main
     var timerOpen : Bool = true
     var isPractice : Bool = true
+    var viewCount = 0
     
     //  MARK:  Objects
     
@@ -83,11 +84,13 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        print("Practice? \(isPractice)")
-        if (isPractice){
-            isPractice = false
+        StaticVariables.mainViewCount++
+        viewCount++
+        print("THIS IS THE VIEWCOUNT \(StaticVariables.mainViewCount)")
+        if (viewCount == 1){
+            isPractice = true
         }else{
-            trialType = "Main"
+            isPractice = false
         }
     }
     
@@ -223,11 +226,11 @@ class ViewController: UIViewController {
             }
             
             //reading
-            //do {
-            //    let text2 = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding)
-            //    print(text2)
-            //}
-            //catch {/* error handling here */}
+            do {
+                let text2 = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding)
+                print(text2)
+            }
+            catch {/* error handling here */}
         }
     }
 
