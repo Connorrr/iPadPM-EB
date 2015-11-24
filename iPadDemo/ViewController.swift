@@ -16,6 +16,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var masterClock: UILabel!
     
+    @IBOutlet weak var wordButtonOutlet: UIButton!
+    
+    @IBOutlet weak var nonWordButtonOutlet: UIButton!
+    
+    @IBOutlet weak var animalWordButtonOutlet: UIButton!
+    
+    
     // MARK:  Actions
     
     @IBAction func tappedHeader(sender: AnyObject) {
@@ -28,22 +35,27 @@ class ViewController: UIViewController {
     // TODO:  Make sure that button mashing doesn't fuck shit up
     @IBAction func wordButton(sender: UIButton) {
         trialTimer?.invalidate()
+        disableButtons()
         userResponse = "L"
         threadStimEnd()
     }
     
     @IBAction func nonWordButton(sender: UIButton) {
         trialTimer?.invalidate()
+        disableButtons()
         userResponse = "M"
         threadStimEnd()
     }
     
     @IBAction func animalWordButton(sender: UIButton) {
         trialTimer?.invalidate()
+        disableButtons()
         userResponse = "R"
         threadStimEnd()
     }
     // MARK:  Instance Variables
+    
+ 
     
     var timerCount : Int = 0
     let startTime = NSDate.timeIntervalSinceReferenceDate()
@@ -102,6 +114,7 @@ class ViewController: UIViewController {
     }
     
     func threadStimEnd() {
+        disableButtons()
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)){
             self.stimEnd()
         }
@@ -133,9 +146,10 @@ class ViewController: UIViewController {
         }
     
         if self.trialNumber < 3 {       //self.stimArray.count {
-            NSThread.sleepForTimeInterval(NSTimeInterval(0.5))
+            NSThread.sleepForTimeInterval(NSTimeInterval(1.0))
             dispatch_sync(dispatch_get_main_queue()) {
                 self.targetWord.text = self.stimArray[self.trialNumber][0]
+                self.enableButtons()
                 self.setTrialTimer()
                 self.trialStartTime = NSDate.timeIntervalSinceReferenceDate()   // Set new trial start time
             }
@@ -143,11 +157,15 @@ class ViewController: UIViewController {
             //print("not true")
             StaticVariables.csvString += structArrayToCSV(self.responseArray)
             dispatch_sync(dispatch_get_main_queue()) {
-                self.dismissViewControllerAnimated(true, completion: nil);
+                if (StaticVariables.isPractice){
+                    self.dismissViewControllerAnimated(true, completion: nil);
+                }else{      //go to goodbyeSegue if finished
+                    self.performSegueWithIdentifier("goodbyeSegue", sender: nil)
+                }
+                
             }
         }
         
-        //TODO: This will need to be stored into an array for the log file
     }
     
     func structArrayToCSV(responses: [Response]) -> String{
@@ -239,6 +257,18 @@ class ViewController: UIViewController {
 //            }
 //            catch {/* error handling here */}
         }
+    }
+    
+    func enableButtons() {
+        wordButtonOutlet.enabled = true
+        nonWordButtonOutlet.enabled = true
+        animalWordButtonOutlet.enabled = true
+    }
+    
+    func disableButtons() {
+        wordButtonOutlet.enabled = false
+        nonWordButtonOutlet.enabled = false
+        animalWordButtonOutlet.enabled = false
     }
 
 }

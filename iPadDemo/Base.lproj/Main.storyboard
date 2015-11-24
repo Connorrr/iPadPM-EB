@@ -173,8 +173,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="IlN-K5-PuS"/>
                     <connections>
+                        <outlet property="animalWordButtonOutlet" destination="zwD-Bp-cw8" id="Xwj-N3-zP9"/>
                         <outlet property="masterClock" destination="HVa-WJ-6Tu" id="zxe-mK-ZZu"/>
+                        <outlet property="nonWordButtonOutlet" destination="65x-Lq-Um7" id="IQm-1y-dzt"/>
                         <outlet property="targetWord" destination="xZO-A0-vs8" id="9F4-cs-gGn"/>
+                        <outlet property="wordButtonOutlet" destination="YXV-oL-Xn0" id="hcG-xI-Tpw"/>
+                        <segue destination="2C9-fP-QMl" kind="presentation" identifier="goodbyeSegue" id="oma-na-N2K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -185,6 +189,40 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1920" y="385"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="brv-yB-lr8">
+            <objects>
+                <viewController id="2C9-fP-QMl" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gpW-d8-Ku6"/>
+                        <viewControllerLayoutGuide type="bottom" id="19g-Yb-niq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="whE-eV-UwU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All trials are now complete.  Thank you for your participation." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zye-0n-bPM">
+                                <rect key="frame" x="172" y="270" width="257" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="257" id="5pr-Zh-SAv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zye-0n-bPM" firstAttribute="centerY" secondItem="whE-eV-UwU" secondAttribute="centerY" id="4ur-fH-idz"/>
+                            <constraint firstItem="zye-0n-bPM" firstAttribute="top" secondItem="gpW-d8-Ku6" secondAttribute="bottom" constant="250" id="c3D-V3-elj"/>
+                            <constraint firstItem="zye-0n-bPM" firstAttribute="centerX" secondItem="whE-eV-UwU" secondAttribute="centerX" id="weD-Af-Ean"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j8F-di-4Lp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2635" y="385"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2fZ-7I-lyY">

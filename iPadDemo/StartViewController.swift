@@ -12,6 +12,7 @@ class StartViewController: UIViewController {
     
     @IBOutlet weak var idField: UITextField!
     
+    
     @IBAction func startButtonPressed(sender: UIButton) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)){
             if (self.idField.text == ""){     //  id field empty
