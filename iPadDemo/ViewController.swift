@@ -29,10 +29,11 @@ class ViewController: UIViewController {
         print("Registered a little Tapperoonie!")
         if (timerOpen) {
             timerOpen = false
+            updateTime()
             masterTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateTime", userInfo: nil, repeats: true)
         }
     }
-    // TODO:  Make sure that button mashing doesn't fuck shit up
+
     @IBAction func wordButton(sender: UIButton) {
         trialTimer?.invalidate()
         disableButtons()
@@ -64,29 +65,27 @@ class ViewController: UIViewController {
     var stimArray : [[String]] = []         // Stimulus Array. Types: 1 - Word, 2 - Non-word, 3 - PM
     var responseArray : [Response] = []
     var userResponse : String = "na"
-    var trialStartTime : NSTimeInterval!
     var trialNumber : Int = 0
     var trialType : String = "Practice"     // Practice or Main
     var timerOpen : Bool = true
     var isPractice : Bool = true
     var viewCount = 0
     
-    //  MARK:  Objects
+    //  MARK:  SuperClass functions
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        importCSV()
+        importCSV()                             // Get input CSV file
         
-        targetWord.text = stimArray[0][0]
-        setTrialTimer()
+        targetWord.text = stimArray[0][0].uppercaseString       // Set the intiial Stimulus
+        setTrialTimer()                         // Set initial trial timer
         
-        //updateTargetWord(stimArray[1].stim, withDelay: false)               // Set initial Stim
-        trialStartTime = NSDate.timeIntervalSinceReferenceDate()    // Set first trial start time
-        
-        // TODO:  Make sure that this is invalidated with a button press
+        if (isPractice) {                       //  If this is the first runthrough.  Set the start time.
+            StaticVariables.trialsStartTime = NSDate.timeIntervalSinceReferenceDate()    // Set first trial start time
+        }
         
     }
     
@@ -109,6 +108,8 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK:  Functions
+    
     func setTrialTimer() {
             self.trialTimer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "threadStimEnd", userInfo: nil, repeats: false)   //  After 3 seconds make sure the stim is removed
     }
@@ -126,7 +127,7 @@ class ViewController: UIViewController {
         var reactionTime = 0.0
         var corr = 0
         if (self.userResponse != "na"){     //Check if the user responded
-            reactionTime = trialEndTime - self.trialStartTime               // Get reaction time
+            reactionTime = trialEndTime - StaticVariables.trialsStartTime               // Get reaction time
             if (self.stimArray[self.trialNumber][1] == self.userResponse){  //
                 corr = 1
             }
@@ -145,16 +146,15 @@ class ViewController: UIViewController {
             self.targetWord.text = " ";
         }
     
-        if self.trialNumber < 3 {       //self.stimArray.count {
+        if self.trialNumber < self.stimArray.count {
             NSThread.sleepForTimeInterval(NSTimeInterval(1.0))
             dispatch_sync(dispatch_get_main_queue()) {
-                self.targetWord.text = self.stimArray[self.trialNumber][0]
+                self.targetWord.text = self.stimArray[self.trialNumber][0].uppercaseString
                 self.enableButtons()
                 self.setTrialTimer()
-                self.trialStartTime = NSDate.timeIntervalSinceReferenceDate()   // Set new trial start time
+                StaticVariables.trialsStartTime = NSDate.timeIntervalSinceReferenceDate()   // Set new trial start time
             }
         }else{
-            //print("not true")
             StaticVariables.csvString += structArrayToCSV(self.responseArray)
             dispatch_sync(dispatch_get_main_queue()) {
                 if (StaticVariables.isPractice){
@@ -235,7 +235,7 @@ class ViewController: UIViewController {
     }
     
     func saveCSV(log: String) {
-        let file = "log.csv" //this is the file. we will write to and read from it
+        let file = StaticVariables.participant + "_log.csv" //this is the file. we will write to and read from it
         
         let text = log //just a text
         
@@ -251,11 +251,11 @@ class ViewController: UIViewController {
             }
             
             //reading
-//            do {
-//                let text2 = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding)
-//                print(text2)
-//            }
-//            catch {/* error handling here */}
+            do {
+                let text2 = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding)
+                print(text2)
+            }
+            catch {/* error handling here */}
         }
     }
     

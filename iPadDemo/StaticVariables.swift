@@ -9,7 +9,8 @@
 import Foundation
 
 public struct StaticVariables {
-    static var isPractice : Bool = true     //  counts the amout of times the main view is accessed
-    static var csvString : String = ""      //  String used as the meat in log file sandwich
-    static var participant : String = ""    //  Participant ID
+    static var isPractice : Bool = true         //  Counts the amout of times the main view is accessed
+    static var csvString : String = ""          //  String used as the meat in log file sandwich
+    static var participant : String = ""        //  Participant ID
+    static var trialsStartTime : NSTimeInterval! //  Used for the master timer clock
 }
