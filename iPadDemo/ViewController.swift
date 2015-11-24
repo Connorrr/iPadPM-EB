@@ -92,6 +92,8 @@ class ViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         if (StaticVariables.isPractice){
             StaticVariables.isPractice = false
+        }else{
+            saveCSV(StaticVariables.csvString)
         }
     }
     
@@ -139,7 +141,7 @@ class ViewController: UIViewController {
             }
         }else{
             //print("not true")
-            structArrayToCSV(self.responseArray)
+            StaticVariables.csvString += structArrayToCSV(self.responseArray)
             dispatch_sync(dispatch_get_main_queue()) {
                 self.dismissViewControllerAnimated(true, completion: nil);
             }
@@ -155,7 +157,6 @@ class ViewController: UIViewController {
             returnCSVString += response.trialType + "," + response.stim + "," + response.response + "," + String(response.rt) + "," + String(response.corr) + "\n"
         }
         
-        saveCSV(returnCSVString)
         return returnCSVString
     }
 
@@ -201,7 +202,12 @@ class ViewController: UIViewController {
     }
     
     func importCSV() {
-        let fileLocation = NSBundle.mainBundle().pathForResource("LDTPractice", ofType: "csv")!
+        var fileLocation : String
+        if (StaticVariables.isPractice){
+            fileLocation = NSBundle.mainBundle().pathForResource("LDTPractice", ofType: "csv")!
+        }else{
+            fileLocation = NSBundle.mainBundle().pathForResource("LDTMain", ofType: "csv")!
+        }
         
         let error: NSErrorPointer = nil
         if let csv = CSV(contentsOfFile: fileLocation, error: error) {
@@ -227,11 +233,11 @@ class ViewController: UIViewController {
             }
             
             //reading
-            do {
-                let text2 = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding)
-                print(text2)
-            }
-            catch {/* error handling here */}
+//            do {
+//                let text2 = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding)
+//                print(text2)
+//            }
+//            catch {/* error handling here */}
         }
     }
 

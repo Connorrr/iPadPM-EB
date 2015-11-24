@@ -9,5 +9,6 @@
 import Foundation
 
 public struct StaticVariables {
-    static var isPractice : Bool = true    //  counts the amout of times the main view is accessed
+    static var isPractice : Bool = true     //  counts the amout of times the main view is accessed
+    static var csvString : String = ""      //  String used as the meat in log file sandwich
 }
