@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Cyx-Zz-Zd8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="maT-fe-rlG">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -203,6 +203,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4aR-it-3eE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1108" y="385"/>
+        </scene>
+        <!--Start View Controller-->
+        <scene sceneID="ltL-6o-V3O">
+            <objects>
+                <viewController id="maT-fe-rlG" customClass="StartViewController" customModule="iPadDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VZG-5L-dpr"/>
+                        <viewControllerLayoutGuide type="bottom" id="qe9-km-i2R"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZoW-zN-ZE2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dHp-nB-sif">
+                                <rect key="frame" x="177" y="285" width="246" height="30"/>
+                                <accessibility key="accessibilityConfiguration" hint=""/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="246" id="muE-S3-0aX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYw-1q-Hdc">
+                                <rect key="frame" x="277" y="370" width="47" height="30"/>
+                                <state key="normal" title="START"/>
+                                <connections>
+                                    <action selector="startButtonPressed:" destination="maT-fe-rlG" eventType="touchUpInside" id="qGW-nQ-hbe"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter you ID number and press Start." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXw-RX-CNb">
+                                <rect key="frame" x="206" y="213" width="188" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="188" id="gwp-0x-uYC"/>
+                                    <constraint firstAttribute="height" constant="64" id="oGz-RZ-n2F"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vYw-1q-Hdc" firstAttribute="top" secondItem="dHp-nB-sif" secondAttribute="bottom" constant="55" id="HV0-16-yX9"/>
+                            <constraint firstItem="dHp-nB-sif" firstAttribute="top" secondItem="fXw-RX-CNb" secondAttribute="bottom" constant="8" symbolic="YES" id="I5k-Xq-r4U"/>
+                            <constraint firstItem="fXw-RX-CNb" firstAttribute="centerX" secondItem="dHp-nB-sif" secondAttribute="centerX" id="Ihn-3O-yfH"/>
+                            <constraint firstItem="dHp-nB-sif" firstAttribute="centerX" secondItem="vYw-1q-Hdc" secondAttribute="centerX" id="TDw-6N-CmO"/>
+                            <constraint firstItem="dHp-nB-sif" firstAttribute="centerX" secondItem="ZoW-zN-ZE2" secondAttribute="centerX" id="VYy-kx-pl3"/>
+                            <constraint firstItem="dHp-nB-sif" firstAttribute="centerY" secondItem="ZoW-zN-ZE2" secondAttribute="centerY" id="fdb-CY-ZMO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="idField" destination="dHp-nB-sif" id="BwT-JB-cGG"/>
+                        <segue destination="Cyx-Zz-Zd8" kind="presentation" identifier="startSegue" id="Kaf-GB-uqz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5z9-El-hpS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1126" y="384"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="22T-lr-hV4">

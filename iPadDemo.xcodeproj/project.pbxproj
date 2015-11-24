@@ -24,6 +24,7 @@
 		BF4E0EAE1BFD9777003A46DA /* LDEBPM-Main.html in Resources */ = {isa = PBXBuildFile; fileRef = BF4E0EAC1BFD9777003A46DA /* LDEBPM-Main.html */; };
 		BF4E0EB01BFECA80003A46DA /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4E0EAF1BFECA80003A46DA /* Response.swift */; };
 		BF542EAD1C03D97A00378118 /* StaticVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF542EAC1C03D97A00378118 /* StaticVariables.swift */; };
+		BF542EAF1C03E3B700378118 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF542EAE1C03E3B700378118 /* StartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		BF4E0EAC1BFD9777003A46DA /* LDEBPM-Main.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "LDEBPM-Main.html"; sourceTree = "<group>"; };
 		BF4E0EAF1BFECA80003A46DA /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		BF542EAC1C03D97A00378118 /* StaticVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticVariables.swift; sourceTree = "<group>"; };
+		BF542EAE1C03E3B700378118 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				BF4E0EAF1BFECA80003A46DA /* Response.swift */,
 				BF542EAC1C03D97A00378118 /* StaticVariables.swift */,
 				BF05FBDE1BEAFE9900DA089B /* Main.storyboard */,
+				BF542EAE1C03E3B700378118 /* StartViewController.swift */,
 				BF05FBE11BEAFE9900DA089B /* Assets.xcassets */,
 				BF05FBE31BEAFE9900DA089B /* LaunchScreen.storyboard */,
 				BF4E0E901BFC2642003A46DA /* .DS_Store */,
@@ -295,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF05FBDD1BEAFE9900DA089B /* ViewController.swift in Sources */,
+				BF542EAF1C03E3B700378118 /* StartViewController.swift in Sources */,
 				BF05FBDB1BEAFE9900DA089B /* AppDelegate.swift in Sources */,
 				BF4E0E8D1BFC033D003A46DA /* InstructionsViewController.swift in Sources */,
 				BF542EAD1C03D97A00378118 /* StaticVariables.swift in Sources */,
