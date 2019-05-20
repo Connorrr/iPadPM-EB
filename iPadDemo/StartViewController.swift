@@ -12,19 +12,29 @@ class StartViewController: UIViewController {
     
     @IBOutlet weak var idField: UITextField!
     
+    @IBAction func startVersionBButtonPressed(_ sender: UIButton) {
+        StaticVariables.version = "B"
+        beginTrials()
+    }
     
-    @IBAction func startButtonPressed(sender: UIButton) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)){
+    @IBAction func startButtonPressed(_ sender: UIButton) {
+        StaticVariables.version = "A"
+        beginTrials()
+    }
+    
+    func beginTrials(){
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async{
             if (self.idField.text == ""){     //  id field empty
                 //print("There was no text for me")
-                let alert = UIAlertController(title: nil, message: "Please enter ID before you continue.", preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "Return", style: UIAlertActionStyle.Default, handler: nil))
-                self.presentViewController(alert, animated: true, completion: nil)
+                let alert = UIAlertController(title: nil, message: "Please enter ID before you continue.", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Return", style: UIAlertActionStyle.default, handler: nil))
+                DispatchQueue.main.sync{
+                    self.present(alert, animated: true, completion: nil)
+                }
             }else{
-                //print("There was some text for me, it was: \(self.idField.text)")
                 StaticVariables.participant = self.idField.text!
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.performSegueWithIdentifier("startSegue", sender: nil)
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "startSegue", sender: nil)
                 }
             }
         }
@@ -35,7 +45,7 @@ class StartViewController: UIViewController {
         
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         //print(StaticVariables.participant)
     }
 

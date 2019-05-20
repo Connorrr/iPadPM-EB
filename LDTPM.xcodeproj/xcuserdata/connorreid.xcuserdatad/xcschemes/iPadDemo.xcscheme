@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BF05FBD61BEAFE9900DA089B"
-               BuildableName = "iPadDemo.app"
-               BlueprintName = "iPadDemo"
-               ReferencedContainer = "container:iPadDemo.xcodeproj">
+               BuildableName = "LDTPM.app"
+               BlueprintName = "LDTPM"
+               ReferencedContainer = "container:LDTPM.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BF05FBEA1BEAFE9900DA089B"
-               BuildableName = "iPadDemoTests.xctest"
-               BlueprintName = "iPadDemoTests"
-               ReferencedContainer = "container:iPadDemo.xcodeproj">
+               BuildableName = "LDTPM.xctest"
+               BlueprintName = "LDTPMTests"
+               ReferencedContainer = "container:LDTPM.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BF05FBF51BEAFE9900DA089B"
-               BuildableName = "iPadDemoUITests.xctest"
-               BlueprintName = "iPadDemoUITests"
-               ReferencedContainer = "container:iPadDemo.xcodeproj">
+               BuildableName = "LDTPM.xctest"
+               BlueprintName = "LDTPMUITests"
+               ReferencedContainer = "container:LDTPM.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BF05FBD61BEAFE9900DA089B"
-            BuildableName = "iPadDemo.app"
-            BlueprintName = "iPadDemo"
-            ReferencedContainer = "container:iPadDemo.xcodeproj">
+            BuildableName = "LDTPM.app"
+            BlueprintName = "LDTPM"
+            ReferencedContainer = "container:LDTPM.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BF05FBD61BEAFE9900DA089B"
-            BuildableName = "iPadDemo.app"
-            BlueprintName = "iPadDemo"
-            ReferencedContainer = "container:iPadDemo.xcodeproj">
+            BuildableName = "LDTPM.app"
+            BlueprintName = "LDTPM"
+            ReferencedContainer = "container:LDTPM.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BF05FBD61BEAFE9900DA089B"
-            BuildableName = "iPadDemo.app"
-            BlueprintName = "iPadDemo"
-            ReferencedContainer = "container:iPadDemo.xcodeproj">
+            BuildableName = "LDTPM.app"
+            BlueprintName = "LDTPM"
+            ReferencedContainer = "container:LDTPM.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

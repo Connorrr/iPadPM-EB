@@ -6,12 +6,13 @@
 //  Copyright © 2015 Connor Reid. All rights reserved.
 //
 
-import Foundation
-
-public struct Response {
+struct Response {
+    var trialNum: Int
     var trialType: String
     var stim: String
     var response: String
     var rt: Double
     var corr: Int
+    var score: Int
+    var time: String
 }
